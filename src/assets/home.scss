@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+#root{
+    width:100wh;
+    height:100vh;
+background-image: url("https://img.freepik.com/free-vector/gradient-liquid-abstract-background_52683-60469.jpg?t=st=1651613243~exp=1651613843~hmac=74bbff71ebcdfdddc7be916abb36463dc8ffb9dc6ab08e921bc843eff419bf0d&w=1060");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    #container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width:50%;
+        background-color:white;
+        height:80%;
+        border-radius:20px;
+        box-shadow: 20px 22px 25px 4px rgba(0,0,0,0.5);
+        h1{
+            font-size:4rem;
+            text-shadow: 5px  2px rgba(0,0,0,0.2);
+            font-family: 'Dancing Script', cursive;        
+        }
+        .actions{
+            
+            display: flex;
+            flex-direction: column;
+            gap:3rem;
+            button{
+                cursor:pointer;
+                font-family:"Georgia";
+                font-size: 1.5rem;
+                border-radius: 10px;
+                padding:1rem;
+                box-shadow: 2px 17px 18px 2px rgba(0,0,0,0.4);
+                background-color:rgba(0,0,0,0.9);
+                color:white;
+            }
+
+           
+          
+            
+            button:hover{
+                
+                transform: scale(1.05);
+            }
+
+            .socials{
+                display: flex;
+                justify-content: center;
+                gap:1rem;
+                font-size: 1.5rem;
+                a{
+                  cursor:pointer;
+                }
+            }
+        }
+    }
+    @media (max-width:480px) {
+
+        #container{
+            width: 90%;
+        }
+    }
+}
+
