@@ -1,0 +1,66 @@
+.container{
+    background-color: azure;
+    height:60%;
+    width:40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    padding: 1rem 0;
+
+    h4{
+        font-size: 2rem;
+    }
+
+    .condition{
+        width:60%;
+        text-align: center;
+    }
+    .img-container{
+        width:100%;
+        margin: 1rem auto 0;
+
+        img{
+            display: block;
+            width:100%;
+        }
+    }
+
+    .buttons{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 1.5rem;
+        column-gap: 2rem;
+        margin-top:1rem;
+
+        button{
+           border-radius: 6px;
+            padding:10px;
+            background-color:rgb(122, 13, 141);
+            color:white;
+            font-family: "Georgia",  serif;
+            font-size: 1rem;
+        }
+
+        button:hover{
+            transform: scale(1.1);
+            box-shadow: 0px 5px 15px 2px #494949;
+        }
+    }
+
+
+    
+}
+
+@media (max-width:780px) {
+
+    .container{
+        width:70%;
+        h4{
+            font-size: 1.4rem;
+        }
+    }
+}
+
+

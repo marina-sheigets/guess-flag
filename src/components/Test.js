@@ -1,5 +1,6 @@
 import React from "react";
 import {questions} from "../questions";
+import "../assets/test.scss";
 
 const Test=()=>{
     const [numberQuestion,setNumberQuestion]=React.useState(0);
@@ -26,14 +27,20 @@ const Test=()=>{
              <div className="w">End</div>
             ):(
                 <>
-                <h4>Question {numberQuestion+1} / {questions.length}</h4>
-                <img src={questions[numberQuestion].img}></img>
-          
+                <div className="condition">
+                  <h4>Question {numberQuestion+1} / {questions.length}</h4>
+                  <div className="img-container">
+                      <img src={questions[numberQuestion].img}></img>
+                  </div>
+                </div>
+               
+                <div className="buttons">
                   {
                     questions[numberQuestion].answersOptions.map((elem)=>
                       <button onClick={changeQuestion}>{elem.answerText}</button>
                     )
                   } 
+                </div>
                 </>
             )
         }
