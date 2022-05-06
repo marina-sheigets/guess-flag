@@ -33,7 +33,7 @@
         row-gap: 1.5rem;
         column-gap: 2rem;
         margin-top:1rem;
-
+        width:60%;
         button{
            border-radius: 6px;
             padding:10px;
@@ -61,6 +61,17 @@
             font-size: 1.4rem;
         }
     }
+}
+
+@media (max-width:480px) {
+
+    .container{
+    .buttons{
+       display: flex;
+       flex-direction: column;
+       width:70%;
+    }
+}
 }
 
 

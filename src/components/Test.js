@@ -1,20 +1,29 @@
 import React from "react";
 import {questions} from "../questions";
 import "../assets/test.scss";
+import Result from "./Result";
 
 const Test=()=>{
-    const [numberQuestion,setNumberQuestion]=React.useState(0);
+  const [score,setScore]=React.useState(0);
+  const [numberQuestion,setNumberQuestion]=React.useState(0);
   const [endStatus,setEndStatus]=React.useState(false);
-  React.useEffect(()=>{
-
-  },endStatus);
  
-
-  function changeQuestion()
+ 
+{/*}
+  document.querySelector(".buttons").addEventListener("click",(e)=>{
+    let variant=e.target.innerHTML;
+    console.log(variant);
+  })*/}
+  function changeQuestion(isCorrect)
   {
+    if(isCorrect)
+    {
+      setScore(score+1);
+    }
+    
     const nextQuestion=numberQuestion+1;
     setNumberQuestion(nextQuestion);
-    if(numberQuestion==questions.length-1)
+    if(numberQuestion===questions.length-1)
     {
       setEndStatus(true);
     }  
@@ -24,7 +33,7 @@ const Test=()=>{
       {
           endStatus ?
             (
-             <div className="w">End</div>
+              <Result score={score}/>
             ):(
                 <>
                 <div className="condition">
@@ -37,7 +46,7 @@ const Test=()=>{
                 <div className="buttons">
                   {
                     questions[numberQuestion].answersOptions.map((elem)=>
-                      <button onClick={changeQuestion}>{elem.answerText}</button>
+                      <button key={elem.answerText} onClick={()=>(changeQuestion(elem.isCorrect))}>{elem.answerText}</button>
                     )
                   } 
                 </div>
